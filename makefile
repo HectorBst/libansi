@@ -25,8 +25,8 @@ run-tests: $(NAME) build-tests
 
 build-tests: $(TESTNAME)
 
-$(TESTNAME): tests.o
-	$(COMPILER) $(ARGS) -o $(TESTNAME) tests.o -L. -lansies
+$(TESTNAME): ansi_sequences.o tests.o
+	$(COMPILER) $(ARGS) -o $(TESTNAME) ansi_sequences.o tests.o
 
 tests.o: tests.c
 	$(COMPILER) $(ARGS) -c tests.c

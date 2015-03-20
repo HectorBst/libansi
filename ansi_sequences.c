@@ -5,71 +5,71 @@
 #include "ansi_sequences.h"
 
 void ansi_save_cursor() {
-	puts("\033[s");
+	fputs("\033[s", stdout);
 }
 
 void ansi_restore_cursor() {
-	puts("\033[u");
+	fputs("\033[u", stdout);
 }
 
 void ansi_hide_cursor(const bool hide) {
-	puts(hide ? "\033[?25l" : "\033[?25h");
+	fputs(hide ? "\033[?25l" : "\033[?25h", stdout);
 }
 
 void ansi_reset_format() {
-	puts("\033[m");
+	fputs("\033[m", stdout);
 }
 
 void ansi_bold(const bool bold) {
-	puts(bold ? "\033[1m" : "\033[21m");
+	fputs(bold ? "\033[1m" : "\033[21m", stdout);
 }
 
 void ansi_faint(const bool faint) {
-	puts(faint ? "\033[2m" : "\033[22m");
+	fputs(faint ? "\033[2m" : "\033[22m", stdout);
 }
 
 void ansi_italic(const bool italic) {
-	puts(italic ? "\033[3m" : "\033[23m");
+	fputs(italic ? "\033[3m" : "\033[23m", stdout);
 }
 
 void ansi_underline(const bool underline) {
-	puts(underline ? "\033[4m" : "\033[24m");
+	fputs(underline ? "\033[4m" : "\033[24m", stdout);
 }
 
 void ansi_slow_blink(const bool blink) {
-	puts(blink ? "\033[5m" : "\033[25m");
+	fputs(blink ? "\033[5m" : "\033[25m", stdout);
 }
 
 void ansi_rapid_blink(const bool blink) {
-	puts(blink ? "\033[6m" : "\033[25m");
+	fputs(blink ? "\033[6m" : "\033[25m", stdout);
 }
 
 void ansi_negative(const bool negative) {
-	puts(negative ? "\033[7m" : "\033[27m");
+	fputs(negative ? "\033[7m" : "\033[27m", stdout);
 }
 
 void ansi_conceal(const bool conceal) {
-	puts(conceal ? "\033[8m" : "\033[28m");
+	fputs(conceal ? "\033[8m" : "\033[28m", stdout);
 }
 
 void ansi_crossed(const bool crossed) {
-	puts(crossed ? "\033[9m" : "\033[29m");
+	fputs(crossed ? "\033[9m" : "\033[29m", stdout);
 }
 
 void ansi_fraktur(const bool fraktur) {
-	puts(fraktur ? "\033[20m" : "\033[23m");
+	fputs(fraktur ? "\033[20m" : "\033[23m", stdout);
 }
 
 void ansi_framed(const bool framed) {
-	puts(framed ? "\033[51m" : "\033[54m");
+	fputs(framed ? "\033[51m" : "\033[54m", stdout);
 }
 
 void ansi_encircled(const bool encircled) {
-	puts(encircled ? "\033[52m" : "\033[54m");
+	fputs(encircled ? "\033[52m" : "\033[54m", stdout);
 }
 
 void ansi_overlined(const bool overlined) {
-	puts(overlined ? "\033[53m" : "\033[55m");
+	fputs(overlined ? "\033[53m" : "\033[55m", stdout);
 }
 
 void ansi_font(const unsigned char font) {
@@ -93,9 +93,9 @@ void ansi_background_color_index(const unsigned char index) {
 }
 
 void ansi_text_color_rgb(const unsigned char red, const unsigned char green, const unsigned char blue) {
-	printf("\033[38;2;%hhum;%hhum;%hhum", red, green, blue);
+	printf("\033[38;2;%hhu;%hhu;%hhum", red, green, blue);
 }
 
 void ansi_background_color_rgb(const unsigned char red, const unsigned char green, const unsigned char blue) {
-	printf("\033[48;2;%hhum;%hhum;%hhum", red, green, blue);
+	printf("\033[48;2;%hhu;%hhu;%hhum", red, green, blue);
 }
