@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#include "ansi_sequences.h"
+#include "ansi.h"
 
 void ansi_save_cursor() {
 	fputs("\033[s", stdout);

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "ansi_sequences.h"
+#include "ansi.h"
 
 void to_defaults() {
 	ansi_reset_format();
